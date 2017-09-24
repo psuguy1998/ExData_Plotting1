@@ -21,6 +21,8 @@ powerdat$datetime<-strptime(paste(powerdat$Date, powerdat$Time), format="%d/%m/%
 plot(powerdat$datetime, powerdat$Sub_metering_1, type="l", col="black", ylab="Energy sub metering", xlab="")
 with(powerdat, lines(datetime, Sub_metering_2, col="red"))
 with(powerdat, lines(datetime, Sub_metering_3, col="blue"))
+legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, bty="n",
+       legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 ## close the png graphics device
 dev.off()
